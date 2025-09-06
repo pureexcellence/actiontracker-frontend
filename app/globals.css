@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Design tokens / tweaks */
+@layer base {
+  h1 { @apply text-2xl font-semibold tracking-tight text-gray-900; }
+  h2 { @apply text-xl font-semibold text-gray-900; }
+  p, li, input, button { @apply text-gray-800; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-gray-200 bg-white shadow-sm; }
+  .btn { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors; }
+  .btn-primary { @apply btn bg-gray-900 text-white hover:bg-gray-800 active:bg-black; }
+  .btn-ghost { @apply btn bg-transparent text-gray-700 hover:bg-gray-100; }
+  .input {
+    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm
+           placeholder:text-gray-400 focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900/10;
+  }
+  .row { @apply grid grid-cols-[1fr_auto] items-center gap-4; }
+}
